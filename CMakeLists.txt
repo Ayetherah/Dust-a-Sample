@@ -226,6 +226,7 @@ target_sources(JustASample PRIVATE
         Source/Utilities/SampleLoader.h
         Source/Utilities/Reaper/ReaperVST3Extensions.cpp
         Source/Utilities/Reaper/ReaperVST3Extensions.h
+        Source/OneDpcmAudioFormat.cpp
 )
 
 juce_add_binary_data(AudioPluginData

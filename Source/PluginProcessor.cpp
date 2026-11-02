@@ -4,6 +4,8 @@
     PluginProcessor.cpp
     Created: 5 Sep 2023
     Author:  binya
+    Edited:  5 Nov 2026
+    Author:  Ayetherah
 
   ==============================================================================
 */
@@ -12,6 +14,8 @@
 #include "PluginEditor.h"
 #include "PluginParameters.h"
 #include "Sampler/CustomSynthesizer.h"
+
+#include "OneDpcmAudioFormat.h"
 
 #if JUCE_DEBUG
 #include "Utilities/BufferUtils.h"
@@ -37,6 +41,8 @@ JustaSampleAudioProcessor::JustaSampleAudioProcessor()
     pitchDetector.addListener(this);
 
     formatManager.registerBasicFormats();
+    formatManager.registerFormat(new OneDpcmAudioFormat(), false);
+    
     fileFilter = juce::WildcardFileFilter(formatManager.getWildcardForAllFormats(), {}, {});
 
     mtsClient = MTS_RegisterClient();

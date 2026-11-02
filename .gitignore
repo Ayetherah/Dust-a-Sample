@@ -2,3 +2,18 @@
 **/.deps
 **/out/
 /Releases/Windows/Secrets/
+
+# Local Build
+build/
+build_log.txt
+
+# Binaries
+*.so
+*.vst3
+*.dll
+*.dylib
+
+# Python / Audio Test files
+__pycache__/
+*.raw
+*.1dpcm
